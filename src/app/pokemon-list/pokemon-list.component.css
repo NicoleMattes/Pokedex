@@ -1,0 +1,20 @@
+.pokemon-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemon-list-btn{
+    width: 250px;
+    margin: 50px;
+    background-color: #FBC418;
+    border-radius: 40px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3F65B9;
+    cursor: pointer;
+    transition: 300ms;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}

@@ -1,0 +1,14 @@
+<div class="pokemon-list"
+    *ngIf="pokemonLoaded">
+    <app-pokemon-card
+        *ngFor ="let pokemon of pokemons; index as i"
+        [pokemon]="pokemon.name"
+        [numero]="i + 1"
+    ></app-pokemon-card>
+</div>
+
+<div class="pokemon-list-btn"
+    *ngIf="pokemonLoaded"
+    (click) = "getNextPokemons()">
+    <h2>Load More</h2>
+</div>
