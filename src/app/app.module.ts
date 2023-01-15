@@ -11,6 +11,7 @@ import { PokemonService } from './core/service/pokemon.service';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { HomeComponent } from './home/home.component';
     PokemonCardComponent,
     WrapperComponent,
     HeaderComponent,
-    HomeComponent
-  ],
+    HomeComponent,
+   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [PokemonService],
   bootstrap: [AppComponent]

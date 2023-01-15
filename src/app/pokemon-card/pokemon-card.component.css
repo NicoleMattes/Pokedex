@@ -10,6 +10,8 @@
     border-radius: 30px;
     transition: 300ms;
     margin: 12px;
+    cursor: pointer;
+    /* position: relative; */
 }
 .pokemon-card:hover{
     transform: scale(1.02);
@@ -51,12 +53,15 @@
 .fire{
     background-color: orange;
 }
+.electric{
+    background-color: yellow;
+}
 .water{
     background-color: blue;
 }
 .Flying{
     background-color: rgb(23, 182, 255);
-    color: black
+    color: black;
 }
 .fighting{
     background-color: red;
@@ -92,4 +97,15 @@
 .fairy{
     background-color: pink;
     color: black;
+}
+
+.pokemon-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  width: 800px;
+  z-index: 99999;
+  background-color: red;
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { PokemonModel } from '../core/model/pokemon.model';
 import { PokemonService } from '../core/service/pokemon.service';
 
@@ -32,12 +32,22 @@ export class PokemonListComponent implements OnInit {
       alert('Você já carregou todos os Pokemons')
       this.pokemonLoaded = false;
     }else{
+      console.log(this.next)
       this.PokemonService.getNextPokemons(this.next).subscribe(pokemons => {
-        // Pega cada pokemons do Array recebedio e acrescenta ao array de pokemon existente para
+        console.log(pokemons)
+        // Pega cada pokemons do Array recebido e acrescenta ao array de pokemon existente para
         pokemons.results.forEach(pkm => {
           this.pokemons.push(pkm)
         })
+        this.next = pokemons.next;
       })
+    }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    if ((document.documentElement.clientHeight + window.scrollY) >= document.body.clientHeight) {
+        this.getNextPokemons();
     }
   }
 
