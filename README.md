@@ -1,3 +1,5 @@
+Aplicação desenvolvida em Angular para simular uma pokedex utilizando uma API open source 
+
 # Pokedex2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
