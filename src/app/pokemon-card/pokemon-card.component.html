@@ -13,7 +13,7 @@
           [class.poison]="pokemon.types[0].type.name === 'poison'"
           [class.fire]="pokemon.types[0].type.name === 'fire'"
           [class.water]="pokemon.types[0].type.name === 'water'"
-          [class.Flying]="pokemon.types[0].type.name === 'Flying'"
+          [class.flying]="pokemon.types[0].type.name === 'flying'"
           [class.fighting]="pokemon.types[0].type.name === 'fighting'"
           [class.ground]="pokemon.types[0].type.name === 'ground'"
           [class.rock]="pokemon.types[0].type.name === 'rock'"
@@ -24,7 +24,9 @@
           [class.steel]="pokemon.types[0].type.name === 'steel'"
           [class.dragon]="pokemon.types[0].type.name === 'dragon'"
           [class.dark]="pokemon.types[0].type.name === 'dark'"
+          [class.electric]="pokemon.types[0].type.name === 'electric'"
           [class.fairy]="pokemon.types[0].type.name === 'fairy'"
+          [class.normal]="pokemon.types[0].type.name === 'normal'"
         ><p>{{pokemon.types[0].type.name | titlecase}}</p></div>
         <div
           class="pokemon-card__types__type poison"
@@ -32,7 +34,7 @@
           [class.poison]="pokemon.types[1].type.name === 'poison'"
           [class.fire]="pokemon.types[1].type.name === 'fire'"
           [class.water]="pokemon.types[1].type.name === 'water'"
-          [class.Flying]="pokemon.types[1].type.name === 'Flying'"
+          [class.flying]="pokemon.types[1].type.name === 'flying'"
           [class.fighting]="pokemon.types[1].type.name === 'fighting'"
           [class.ground]="pokemon.types[1].type.name === 'ground'"
           [class.rock]="pokemon.types[1].type.name === 'rock'"
@@ -49,6 +51,8 @@
     </div>
 </div>
 
+<!-- ---------------------Modal Details-------------------------------------- -->
+
 <ng-template #content let-modal>
 	<div class="modal-header">
 		<h4 class="modal-title" id="modal-basic-title">{{pokemon.name | titlecase}}</h4>
@@ -58,33 +62,81 @@
 		<form>
 			<div class="mb-3" >
 
-        <div class="pokemon-card__img">
-          <img [src]="getImagePokemon()">
-        </div>
-
-        <div class="pokemon-card__types">
+        <div class="pokemon-card__types__top">
+          <div class="pokemon-card_types_left">
+            <div class="pokemon-card__img">
+              <img [src]="getImagePokemon()">
+            </div>
+          <div class="pokemon-card__types">
           <div
-            class="pokemon-card__types__type"
-          ><p>{{typeOneInfo.name | titlecase}}</p></div>
+            class="pokemon-card__types__type model"
+            [class.grass]="pokemon.types[0].type.name === 'grass'"
+            [class.poison]="pokemon.types[0].type.name === 'poison'"
+            [class.fire]="pokemon.types[0].type.name === 'fire'"
+            [class.water]="pokemon.types[0].type.name === 'water'"
+            [class.flying]="pokemon.types[0].type.name === 'flying'"
+            [class.fighting]="pokemon.types[0].type.name === 'fighting'"
+            [class.ground]="pokemon.types[0].type.name === 'ground'"
+            [class.rock]="pokemon.types[0].type.name === 'rock'"
+            [class.psychic]="pokemon.types[0].type.name === 'psychic'"
+            [class.ice]="pokemon.types[0].type.name === 'ice'"
+            [class.bug]="pokemon.types[0].type.name === 'bug'"
+            [class.ghost]="pokemon.types[0].type.name === 'ghost'"
+            [class.steel]="pokemon.types[0].type.name === 'steel'"
+            [class.dragon]="pokemon.types[0].type.name === 'dragon'"
+            [class.dark]="pokemon.types[0].type.name === 'dark'"
+            [class.electric]="pokemon.types[0].type.name === 'electric'"
+            [class.fairy]="pokemon.types[0].type.name === 'fairy'"
+            [class.normal]="pokemon.types[0].type.name === 'normal'"
+            ><p>{{typeOneInfo.name | titlecase}}</p></div>
           <div
-            class="pokemon-card__types__type poison"
+            class="pokemon-card__types__type model"
+            [class.grass]="pokemon.types[1].type.name === 'grass'"
+            [class.poison]="pokemon.types[1].type.name === 'poison'"
+            [class.fire]="pokemon.types[1].type.name === 'fire'"
+            [class.water]="pokemon.types[1].type.name === 'water'"
+            [class.flying]="pokemon.types[1].type.name === 'flying'"
+            [class.fighting]="pokemon.types[1].type.name === 'fighting'"
+            [class.ground]="pokemon.types[1].type.name === 'ground'"
+            [class.rock]="pokemon.types[1].type.name === 'rock'"
+            [class.psychic]="pokemon.types[1].type.name === 'psychic'"
+            [class.ice]="pokemon.types[1].type.name === 'ice'"
+            [class.bug]="pokemon.types[1].type.name === 'bug'"
+            [class.ghost]="pokemon.types[1].type.name === 'ghost'"
+            [class.steel]="pokemon.types[1].type.name === 'steel'"
+            [class.dragon]="pokemon.types[1].type.name === 'dragon'"
+            [class.dark]="pokemon.types[1].type.name === 'dark'"
+            [class.fairy]="pokemon.types[1].type.name === 'fairy'"
             *ngIf="pokemon.types.length > 1"
           ><p>{{pokemon.types[1].type.name | titlecase}}</p></div>
+          </div>
+          </div>
+            <div>
+              <div class="pokemon-card__Skills">
+                <h4>Habilidades:</h4>
+                <ul>
+                  <li *ngFor="let ability of pokemon.abilities">{{ability.ability.name}}</li>
+                </ul>
+              </div>
+
+              <div class="pokemon-card__feature">
+                <div id="weight">
+                  <h4>Weight</h4>
+                  <h5>{{pokemon.weight}}</h5>
+                </div>
+                <div id="height">
+                  <h4>Height</h4>
+                  <h5>{{pokemon.height}}</h5>
+                </div>
+              </div>
+            </div>
         </div>
 
-        <div class="pokemon-card__types">
-          <div>
-            <h4>weight</h4>
-            <h5>{{pokemon.weight}}</h5>
-          </div>
-          <div>
-            <h4>height</h4>
-            <h5>{{pokemon.height}}</h5>
-          </div>
-        </div>
 
-        <div>
-          <h4>Fraquezas</h4>
+
+      <div class="pokemon-card__bottom">
+        <div class="pokemon-card__weaknesses">
+          <h4 id="weaknesses">Fraquezas</h4>
           <ul *ngIf="typeOneInfo">
             <h5>{{typeOneInfo.name}}</h5>
             <li *ngFor="let weak of typeOneInfo.damage_relations.double_damage_from">
@@ -106,8 +158,8 @@
           </ul>
         </div>
 
-        <div>
-          <h4>Vantagens</h4>
+        <div class="pokemon-card__Benefits">
+          <h4 id="Benefits" >Vantagens</h4>
           <ul *ngIf="typeOneInfo">
             <h5>{{typeOneInfo.name}}</h5>
             <li *ngFor="let weak of typeOneInfo.damage_relations.double_damage_to">
@@ -129,19 +181,13 @@
           </ul>
         </div>
 
-        <div>
-          <h4>Habilidades:</h4>
-          <ul>
-            <li *ngFor="let ability of pokemon.abilities">{{ability.ability.name}}</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Status:</h4>
+        <div class="pokemon-card__status">
+          <h4 id = "status">Status:</h4>
           <ul>
             <li *ngFor="let status of pokemon.stats">{{status.stat.name}}: {{status.base_stat}}</li>
           </ul>
         </div>
+      </div>
 
 			</div>
 		</form>

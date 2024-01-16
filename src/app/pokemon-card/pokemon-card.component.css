@@ -1,6 +1,7 @@
 .pokemon-card{
-    background-color: rgba(215, 250, 241, 0.705);
+    background-color: rgba(217, 217, 235, 0.479);
     width: 210px;
+    height: 335px;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -31,6 +32,7 @@
     display: flex;
     margin-bottom: 10px;
 }
+
 .pokemon-card__types__type{
     /* border: 1px solid black; */
     width: 80px;
@@ -39,38 +41,41 @@
     justify-content: center;
     margin: 4px;
     border-radius: 10px;
-    color: white;
-    height: 22px;
+    color: black;
+    height: 25px;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-
 }
+
+.model{
+  padding-top: 13px;
+}
+
 .grass{
-    background-color: green;
+    background-color: rgb(171, 218, 171);
 }
 .poison{
-    background-color: purple;
+    background-color: rgb(204, 168, 204);
 }
 .fire{
-    background-color: orange;
+    background-color: rgb(167, 91, 91);
 }
 .electric{
-    background-color: yellow;
+    background-color: rgb(241, 241, 117);
 }
 .water{
-    background-color: blue;
+    background-color: rgb(116, 231, 247);
 }
-.Flying{
-    background-color: rgb(23, 182, 255);
-    color: black;
+.flying{
+    background-color: rgb(168, 173, 241);
 }
 .fighting{
-    background-color: red;
+    background-color: rgb(236, 169, 169);
 }
 .ground{
-    background-color: rgb(73, 35, 0)
+    background-color: rgba(87, 70, 56, 0.651)
 }
 .rock{
-    background-color: gray;
+    background-color: rgb(172, 172, 172);
 }
 .psychic{
     background-color: rgb(86, 128, 63);
@@ -79,26 +84,90 @@
     background-color: rgb(161, 255, 250);
 }
 .bug{
-    background-color: rgb(34, 18, 0)
+    background-color: rgba(85, 60, 32, 0.747)
 }
 .ghost{
-    background-color: rgb(89, 89, 145);
+    background-color: rgb(121, 121, 189);
 }
 .steel{
     background-color: rgb(204, 204, 204);
-    color: black;
 }
 .dragon{
-    background-image: linear-gradient(50deg rgb(255, 0, 0) rgb(255, 208, 0));
+    background-image: linear-gradient(50deg rgb(235, 166, 166) rgb(231, 209, 110));
 }
 .dark{
-    background-color: black;
+    background-color: rgb(54, 54, 54);
 }
 .fairy{
-    background-color: pink;
-    color: black;
+    background-color: rgb(255, 192, 245);
+}
+.normal{
+  background-color: rgb(195, 255, 220)
 }
 
+.grass-modal h5{
+  color: rgb(171, 218, 171);
+  font-weight: bold;
+}
+.poison-modal{
+  color: rgb(204, 168, 204);
+}
+.fire-modal h5{
+  color: rgb(167, 91, 91);
+  font-weight: bold;
+}
+.electric-modal{
+  color: rgb(241, 241, 117);
+}
+.water-modal{
+  color: rgb(116, 231, 247);
+}
+.flying-modal{
+  color: rgb(168, 173, 241);
+}
+.fighting-modal{
+  color: rgb(236, 169, 169);
+}
+.ground-modal{
+  color: rgba(87, 70, 56, 0.651)
+}
+.rock-modal{
+  color: rgb(172, 172, 172);
+}
+.psychic-modal{
+  color: rgb(86, 128, 63);
+}
+.ice-modal{
+  color: rgb(161, 255, 250);
+}
+.bug-modal{
+  color: rgba(85, 60, 32, 0.747)
+}
+.ghost-modal{
+  color: rgb(121, 121, 189);
+}
+.steel-modal{
+  color: rgb(204, 204, 204);
+}
+.dragon-modal{
+  background-image: linear-gradient(50deg rgb(235, 166, 166) rgb(231, 209, 110));
+}
+.dark-modal{
+  color: rgb(54, 54, 54);
+}
+.fairy-modal{
+  color: rgb(255, 192, 245);
+}
+.normal-modal{
+background-color: rgb(195, 255, 220)
+}
+
+.pokemon-card__Skills{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .pokemon-details {
   display: flex;
   align-items: center;
@@ -107,5 +176,90 @@
   height: 100vh;
   width: 800px;
   z-index: 99999;
-  background-color: red;
+}
+.pokemon-card__feature{
+  display: flex;
+  width: 240px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#weight,
+#height{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px;
+}
+#weight{
+  background-color: rgb(255, 250, 181);
+  width: 100px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+#height{
+  background-color: rgba(201, 191, 255, 0.521);
+  width: 100px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.modal-bottom{
+  display: flex;
+}
+.pokemon-card__types__top{
+  display: flex;
+}
+.pokemon-card__bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokemon-card__weaknesses{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.pokemon-card__Benefits{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.pokemon-card__status{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 6px;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+#weaknesses,
+#status{
+  color: #3F65B9;
+  font-size: 22px;
+}
+
+#Benefits{
+  color: #FBC418;
+  font-size: 22px;
+}
+
+ul {
+  list-style: none
+}
+
+#Modal{
+  width: 900px;
 }

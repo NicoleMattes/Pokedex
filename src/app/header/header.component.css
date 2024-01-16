@@ -50,3 +50,42 @@
     cursor: pointer;
     transform: scale(1.1)
 }
+
+@media only screen and (max-width:300px){
+  .header__container{
+    align-items: center;
+    justify-content: center;
+  }
+  #logo{
+    width: 120px;
+    margin-left: 50%;
+  }
+  .header__conect__singup{
+    display: none;
+  }
+  .header__conect__login{
+    display: none;
+  }
+}
+@media only screen and (max-width:422px){
+  .header__container{
+    align-items: center;
+    justify-content: center;
+  }
+  #logo{
+    width: 150px;
+    margin-left: 70%;
+  }
+  .header__conect__singup{
+    display: none;
+  }
+  .header__conect__login{
+    display: none;
+  }
+}
+
+@media only screen and (max-width:362px){
+  #logo{
+    margin-left: 50%;
+  }
+}

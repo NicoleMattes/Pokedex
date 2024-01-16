@@ -18,17 +18,18 @@ export class PokemonService {
 
   }
 
-  // Função para pegar 20 pokemons da API
+  // Função para pegar 10 pokemons da API
   getAllPokemons():Observable<ResponseModel<PokemonModel[]>> {
     const url = "https://pokeapi.co/api/v2/pokemon?limit=10";
 
     return this.httpClient.get<ResponseModel<PokemonModel[]>>(url)
   }
-  // Função para pegar os proximos 20 pokemon
+  // Função para pegar os proximos 10 pokemon
   getNextPokemons(url:string):Observable<ResponseModel<PokemonModel[]>> {
     return this.httpClient.get<ResponseModel<PokemonModel[]>>(url)
   }
 
+  // função para pegar os detalhes do pokemons
   getPokemonDetails(id: number):Observable<FullPokemon> {
     return this.httpClient.get<FullPokemon>(`${this.url}/${id}`)
   }

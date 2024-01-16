@@ -18,7 +18,7 @@ export class PokemonListComponent implements OnInit {
 
   constructor(private PokemonService: PokemonService) {}
 
-  // busca os 20 primeiros pokemons ao iniciar a pagina
+  // busca os 10 primeiros pokemons ao iniciar a pagina
   ngOnInit() {
     this.PokemonService.getAllPokemons().subscribe(pokemons =>{
       this.pokemons = pokemons.results
@@ -26,7 +26,7 @@ export class PokemonListComponent implements OnInit {
     } );
   }
 
-  // busca os 20 próximos pokemons ao iniciar a pagina
+  // busca os 10 próximos pokemons ao iniciar a pagina
   getNextPokemons(){
     if(this.next === null) {
       alert('Você já carregou todos os Pokemons')
@@ -44,6 +44,7 @@ export class PokemonListComponent implements OnInit {
     }
   }
 
+  // função para chamar os proximos pokenons
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     if ((document.documentElement.clientHeight + window.scrollY) >= document.body.clientHeight) {
